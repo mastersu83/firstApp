@@ -17,6 +17,7 @@ class SvetoforSectionView: UIView {
         super.init(frame: .zero)
         
         self.colorLight = colorLight
+        //code
     }
     
     required init?(coder: NSCoder) {
