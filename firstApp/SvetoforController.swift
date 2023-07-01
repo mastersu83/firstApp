@@ -14,15 +14,13 @@ class SvetoforController: UIViewController {
     @IBOutlet var viewsCollection: [UIView]!
     // Storyboard var
     
-    @IBOutlet weak var firstSectionView: SvetoforSectionView!
-    @IBOutlet weak var secondSectionView: SvetoforSectionView!
-    @IBOutlet weak var thirdSectionView: SvetoforSectionView!
-    
-    let blueView = UIView(frame: .zero)
+    var firstSectionView = SvetoforSectionView(colorLight: .red)
+    var secondSectionView = SvetoforSectionView(colorLight: .orange)
+    var thirdSectionView = SvetoforSectionView(colorLight: .green)
 
     @IBOutlet weak var turnButton: UIButton!
     
-    @IBOutlet weak var redViewHeightConstraint: NSLayoutConstraint!
+    let stackView = UIStackView(frame: .zero)
     
 //    MARK: - Системные функции
     
@@ -30,122 +28,61 @@ class SvetoforController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.addSubview(stackView)
+        stackView.spacing = 20
+        stackView.axis = .vertical
+        stackView.alignment = .center
+        stackView.distribution = .fillEqually
+        
+        stackView.addArrangedSubview(firstSectionView)
+        stackView.addArrangedSubview(secondSectionView)
+        stackView.addArrangedSubview(thirdSectionView)
+        
+        stackView.snp.makeConstraints{make in
+            make.width.equalTo(300)
+            make.height.greaterThanOrEqualTo(300)
+            make.top.equalTo(64)
+            make.centerX.equalToSuperview()
+            
+        }
+//        view.addSubview(firstSectionView)
+//        view.addSubview(secondSectionView)
+//        view.addSubview(thirdSectionView)
+//
+        firstSectionView.snp.makeConstraints{ make in
+            make.width.height.equalTo(100)
+        }
+        
+        secondSectionView.snp.makeConstraints{ make in
+            make.width.height.equalTo(100)
+        }
+        
+        thirdSectionView.snp.makeConstraints{ make in
+            make.width.height.equalTo(100)
+        }
+        
         firstSectionView.turnOff()
         secondSectionView.turnOff()
         thirdSectionView.turnOff()
-        
-        firstSectionView.colorLight = .red
-        secondSectionView.colorLight = .orange
-        thirdSectionView.colorLight = .green
-        
-//        let arrayView = [firstSectionView, secondSectionView, thirdSectionView, blueView]
-//        
-////        for view in viewsCollection {
-////            configView(view)
-////        }
-//        
-//        for view in arrayView {
-//            configView(view!)
-//        }
-//        
-////        blueView.backgroundColor = .blue
-////        view.addSubview(blueView)
-////
-////        blueView.snp.makeConstraints { make in
-////            make.width.equalTo(100)
-////            make.height.equalTo(100)
-////            make.centerX.equalToSuperview()
-////            make.top.equalTo(greenView.snp.bottom).offset(40)
-////
-////        }
-//        
-////        configView(redView)
-////        configView(orangeView)
-////        configView(greenView)
-//        
-//       printMyText(text: "Экран БЫЛ загружен")
     }
     
     
-//    Экран БУДЕТ показан
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        printMyText(text: "Экран БУДЕТ показан")
-      
-    }
-    
-    
-//    Экран БЫЛ показан
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        printMyText(text: "Экран БЫЛ показан")
-        
-        view.backgroundColor = .white
-       
-    }
-    
-//    Экран БУДЕТ скрыт
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-    }
-    
-//    Экран БЫЛ скрыт
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-    }
-
-//    MARK: - Пользовательске функции
+    //    MARK: - Пользовательске функции
 
     @IBAction func turnButtonAction(_ sender: Any) {
         
-        firstSectionView.toggleLight(firstSectionView, secondSectionView, thirdSectionView)
-        
-//        if firstSectionView.isOff() && secondSectionView.isOff() && thirdSectionView.isOff() {
-//            firstSectionView.turnOn()
-//        } else if firstSectionView.isOn() {
-//            firstSectionView.turnOff()
-//            secondSectionView.turnOn()
-//        } else if secondSectionView.isOn() {
-//            thirdSectionView.turnOn()
-//            secondSectionView.turnOff()
-//        } else {
-//            thirdSectionView.turnOff()
-//        }
-        
-
-        
-        
-//        if firstSectionView.backgroundColor == .clear && thirdSectionView.backgroundColor == .clear && secondSectionView.backgroundColor == .clear {
-//            firstSectionView.backgroundColor = .red
-//        } else if firstSectionView.backgroundColor == .red {
-//            firstSectionView.backgroundColor = .clear
-//            secondSectionView.backgroundColor = .orange
-//        } else if secondSectionView.backgroundColor == .orange {
-//            thirdSectionView.backgroundColor = .green
-//            secondSectionView.backgroundColor = .clear
-//        } else {
-//            thirdSectionView.backgroundColor = .clear
-//        }
-        
-//        redView.backgroundColor = redView.backgroundColor == .clear ? .red : .clear
-        
-//        redView.isHidden = !redView.isHidden
+        if firstSectionView.isOff() && secondSectionView.isOff() && thirdSectionView.isOff() {
+            firstSectionView.turnOn()
+        } else if firstSectionView.isOn() {
+            firstSectionView.turnOff()
+            secondSectionView.turnOn()
+        } else if secondSectionView.isOn() {
+            thirdSectionView.turnOn()
+            secondSectionView.turnOff()
+        } else {
+            thirdSectionView.turnOff()
+        }
     }
-    
-//    func configView (_ view: UIView) {
-//        view.layer.cornerRadius = redViewHeightConstraint.constant / 2
-//        view.layer.borderWidth = 2
-//        view.layer.borderColor = UIColor.black.cgColor
-//        view.backgroundColor = .clear
-//    }
-    
-    func printMyText(text: String) {
-   
-        print(text)
-    }
-    
     
 }
 

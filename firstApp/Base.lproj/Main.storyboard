@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hzs-ta-t4m">
-                                <rect key="frame" x="159" y="589" width="75" height="35"/>
+                                <rect key="frame" x="159" y="775" width="75" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="xDm-40-bAg"/>
                                 </constraints>
@@ -27,49 +27,16 @@
                                     <action selector="turnButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jRp-8U-XpH"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MOR-zW-UBx" customClass="SvetoforSectionView" customModule="firstApp" customModuleProvider="target">
-                                <rect key="frame" x="146.66666666666666" y="59" width="100" height="100"/>
-                                <color key="backgroundColor" systemColor="systemRedColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="Zdx-lR-BhM"/>
-                                    <constraint firstAttribute="width" constant="100" id="wAD-VE-g0u"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wTr-y9-vdn" customClass="SvetoforSectionView" customModule="firstApp" customModuleProvider="target">
-                                <rect key="frame" x="146.66666666666666" y="199" width="100" height="100"/>
-                                <color key="backgroundColor" systemColor="systemYellowColor"/>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kWX-vC-rXY" customClass="SvetoforSectionView" customModule="firstApp" customModuleProvider="target">
-                                <rect key="frame" x="146.66666666666666" y="339" width="100" height="100"/>
-                                <color key="backgroundColor" systemColor="systemGreenColor"/>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="kWX-vC-rXY" firstAttribute="top" secondItem="wTr-y9-vdn" secondAttribute="bottom" constant="40" id="JRD-zZ-586"/>
-                            <constraint firstItem="wTr-y9-vdn" firstAttribute="centerX" secondItem="MOR-zW-UBx" secondAttribute="centerX" id="K5Q-YK-vMS"/>
-                            <constraint firstItem="kWX-vC-rXY" firstAttribute="width" secondItem="MOR-zW-UBx" secondAttribute="width" id="Oc6-VO-6eZ"/>
-                            <constraint firstItem="kWX-vC-rXY" firstAttribute="height" secondItem="MOR-zW-UBx" secondAttribute="height" id="Oqd-Zv-lJC"/>
-                            <constraint firstItem="hzs-ta-t4m" firstAttribute="centerX" secondItem="kWX-vC-rXY" secondAttribute="centerX" id="WML-Md-ZHI"/>
-                            <constraint firstItem="MOR-zW-UBx" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="aER-Lh-7Tu"/>
-                            <constraint firstItem="wTr-y9-vdn" firstAttribute="top" secondItem="MOR-zW-UBx" secondAttribute="bottom" constant="40" id="ecB-Xr-Z2r"/>
-                            <constraint firstItem="wTr-y9-vdn" firstAttribute="width" secondItem="MOR-zW-UBx" secondAttribute="width" id="esQ-rX-PbA"/>
-                            <constraint firstItem="wTr-y9-vdn" firstAttribute="height" secondItem="MOR-zW-UBx" secondAttribute="height" id="kCP-hk-EZI"/>
-                            <constraint firstItem="kWX-vC-rXY" firstAttribute="centerX" secondItem="MOR-zW-UBx" secondAttribute="centerX" id="pm5-B8-0TM"/>
-                            <constraint firstItem="MOR-zW-UBx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="tx8-g0-tKS"/>
-                            <constraint firstItem="hzs-ta-t4m" firstAttribute="top" secondItem="kWX-vC-rXY" secondAttribute="bottom" constant="150" id="zcf-gI-xHL"/>
+                            <constraint firstItem="hzs-ta-t4m" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Aud-zR-PMm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hzs-ta-t4m" secondAttribute="bottom" constant="8" id="CAx-qE-sty"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="firstSectionView" destination="MOR-zW-UBx" id="V28-37-Lt9"/>
-                        <outlet property="redViewHeightConstraint" destination="Zdx-lR-BhM" id="uND-vA-4Bl"/>
-                        <outlet property="secondSectionView" destination="wTr-y9-vdn" id="sb8-nt-cO0"/>
-                        <outlet property="thirdSectionView" destination="kWX-vC-rXY" id="3vi-JS-HXN"/>
                         <outlet property="turnButton" destination="hzs-ta-t4m" id="40B-ub-lD4"/>
-                        <outletCollection property="viewsCollection" destination="MOR-zW-UBx" collectionClass="NSMutableArray" id="rug-7m-rmF"/>
-                        <outletCollection property="viewsCollection" destination="wTr-y9-vdn" collectionClass="NSMutableArray" id="bZ7-lg-uhk"/>
-                        <outletCollection property="viewsCollection" destination="kWX-vC-rXY" collectionClass="NSMutableArray" id="Wc9-Id-1k4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -80,15 +47,6 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
