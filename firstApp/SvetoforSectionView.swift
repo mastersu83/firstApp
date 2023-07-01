@@ -7,13 +7,33 @@
 
 import UIKit
 
+
+enum Colors {
+    case red
+    case orange
+    case green
+    
+    func color()->UIColor {
+        switch self {
+            
+        case .red:
+          return  UIColor.red
+        case .orange:
+            return  UIColor.orange
+        case .green:
+            return UIColor.green
+        }
+        
+    }
+}
+
 class SvetoforSectionView: UIView {
     
 // момент создания из сториборда
     
-    var colorLight: UIColor?
+    var colorLight: Colors?
     
-    init(colorLight: UIColor){
+    init(colorLight: Colors){
         super.init(frame: .zero)
         
         self.colorLight = colorLight
@@ -35,15 +55,12 @@ class SvetoforSectionView: UIView {
         setUpView()
     }
     
-    func setUpView () {
-        layer.cornerRadius = frame.size.width / 2
-        layer.borderWidth = 2
-        layer.borderColor = UIColor.black.cgColor
-        backgroundColor = .clear
-    }
+    
+    // MARK: - Public
+    
     
     func turnOn (){
-        backgroundColor = colorLight
+        backgroundColor = colorLight?.color()
     }
 
     func turnOff() {
@@ -68,20 +85,12 @@ class SvetoforSectionView: UIView {
         
     }
     
-    func toggleLight (_ firstSection: SvetoforSectionView, _ secondSection: SvetoforSectionView, _ thirdSection: SvetoforSectionView){
-        
-        
-       
-        if firstSection.isOff() && secondSection.isOff() && thirdSection.isOff() {
-            firstSection.turnOn()
-        } else if firstSection.isOn() {
-            firstSection.turnOff()
-            secondSection.turnOn()
-        } else if secondSection.isOn() {
-            thirdSection.turnOn()
-            secondSection.turnOff()
-        } else {
-            thirdSection.turnOff()
-        }
+    // MARK: - Private
+    
+    func setUpView () {
+        layer.cornerRadius = frame.size.width / 2
+        layer.borderWidth = 2
+        layer.borderColor = UIColor.black.cgColor
+        backgroundColor = .clear
     }
 }

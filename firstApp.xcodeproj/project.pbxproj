@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C77F636B2A4D7760005CCA62 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C77F636A2A4D7760005CCA62 /* SnapKit */; };
 		C77F636D2A4D82C0005CCA62 /* SvetoforSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77F636C2A4D82C0005CCA62 /* SvetoforSectionView.swift */; };
+		C77F636F2A501A16005CCA62 /* SvetoforView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77F636E2A501A16005CCA62 /* SvetoforView.swift */; };
 		C7ADCC572A2FA2DA00197FC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7ADCC562A2FA2DA00197FC3 /* AppDelegate.swift */; };
 		C7ADCC592A2FA2DA00197FC3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7ADCC582A2FA2DA00197FC3 /* SceneDelegate.swift */; };
 		C7ADCC5B2A2FA2DA00197FC3 /* SvetoforController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7ADCC5A2A2FA2DA00197FC3 /* SvetoforController.swift */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		C77F636C2A4D82C0005CCA62 /* SvetoforSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SvetoforSectionView.swift; sourceTree = "<group>"; };
+		C77F636E2A501A16005CCA62 /* SvetoforView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SvetoforView.swift; sourceTree = "<group>"; };
 		C7ADCC532A2FA2DA00197FC3 /* firstApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = firstApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7ADCC562A2FA2DA00197FC3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C7ADCC582A2FA2DA00197FC3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 			children = (
 				C7ADCC562A2FA2DA00197FC3 /* AppDelegate.swift */,
 				C7ADCC582A2FA2DA00197FC3 /* SceneDelegate.swift */,
+				C77F636E2A501A16005CCA62 /* SvetoforView.swift */,
 				C7ADCC5A2A2FA2DA00197FC3 /* SvetoforController.swift */,
 				C77F636C2A4D82C0005CCA62 /* SvetoforSectionView.swift */,
 				C7ADCC5C2A2FA2DA00197FC3 /* Main.storyboard */,
@@ -151,6 +154,7 @@
 			files = (
 				C77F636D2A4D82C0005CCA62 /* SvetoforSectionView.swift in Sources */,
 				C7ADCC5B2A2FA2DA00197FC3 /* SvetoforController.swift in Sources */,
+				C77F636F2A501A16005CCA62 /* SvetoforView.swift in Sources */,
 				C7ADCC572A2FA2DA00197FC3 /* AppDelegate.swift in Sources */,
 				C7ADCC592A2FA2DA00197FC3 /* SceneDelegate.swift in Sources */,
 			);
